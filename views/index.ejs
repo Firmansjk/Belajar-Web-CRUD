@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Makanan</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-blue-200">
+    <section class="m-5">
+        <div class="flex justify-evenly mt-4 gap-24">
+            <div>
+                <h1 class="text-2xl font-bold"> Database Jajanan Toko Gor Bakery</h1>
+                <p>List Persediaan jajanan pada toko</p>
+            </div>
+            <div class="flex self-center">
+                <a href="/add" class="text-1xl font-bold bg-green-400 p-2 rounded-md">Tambah Data</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex justify-center">
+        <form action="" class="flex custom, w-30 ">
+            <table class="bg-white shadow rounded-2xl">
+                <thead class="bg-indigo-400 ">
+                    <th>Id</th>
+                    <th>Nama Jajanan</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Aksi</th>
+                </thead>
+                <tbody>
+                  <% for(i=0; i<datamakanan.length; i++ ) { %>                   
+                    <tr class="border-y-2">
+                      <td class="py-10 px-20"><%= datamakanan[i].id %></td>
+                      <td class="py-10 px-20"><%= datamakanan[i].nama_jajanan %></td>
+                      <td class="py-10 px-20"><%= datamakanan[i].harga %></td>
+                      <td class="py-10 px-20"><%= datamakanan[i].stok %></td>
+                      <td class="py-10 px-20">
+                          <a href="/edit?id=<%= datamakanan[i].id %>" class="text-1md font-bold bg-yellow-400 p-2 rounded-md">Edit</a>
+                          <a href="/delete?id=<%= datamakanan[i].id %>" class="text-1md font-bold bg-red-400 p-2 rounded-md">Delete</a>
+                      </td>
+                    </tr>
+                  <% } %>
+                </tbody>
+            </table>
+        </form>
+    </section>
+</body>
+</html>

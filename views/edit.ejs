@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Makanan</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-blue-200">
+    <section class="text-center">
+        <div class="m-5">
+            <h1 class="text-2xl font-bold">Input Data Jajanan Baru</h1>
+        </div>
+    </section >
+    <section class="flex justify-evenly">
+        <form method="post" action="/edit" class="flex flex-col bg-indigo-400 rounded-md">
+            <div class="py-3">
+                <label for="" class="py-1 px-20">Id</label>
+                <div class="py-1 px-20">
+                    <input type="text" name="id" value="<%= datamakanan[0].id %>" readonly class="rounded-md">
+                </div>
+            </div>
+            <div class="py-3">
+                <label for="" class="py-1 px-20">Nama Jajanan</label>
+                <div class="py-1 px-20">
+                    <input type="text" name="nama_jajanan" value="<%= datamakanan[0].nama_jajanan %>" class="rounded-md">
+                </div>
+            </div>
+            <div class="py-3">
+                <label for="" class="py-1 px-20">Harga</label>
+                <div class="py-1 px-20">
+                    <input type="text" name="harga" value="<%= datamakanan[0].harga %>" class="rounded-md">
+                </div>
+            </div>
+            <div class="py-3">
+                <label for="" class="py-1 px-20">Stok</label>
+                <div class="py-1 px-20">
+                    <input type="text" name="stok" value="<%= datamakanan[0].stok %>" class="rounded-md">
+                </div>
+            </div>
+            <div class="self-center py-3">
+                <button type="submit" class="py-3 px-10 text-1md font-bold bg-yellow-400 p-2 rounded-md">Edit</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
